@@ -62,10 +62,11 @@ RUN chmod +x rustup
 RUN ./rustup -y
 
 # Build libindy
-RUN git clone https://github.com/hyperledger/indy-sdk.git
+RUN git clone https://github.com/ianco/indy-sdk.git
 WORKDIR /home/indy/indy-sdk/libindy
 RUN git fetch
-RUN git checkout a191cde163ced0035217711a8eae24e65513158c
+# RUN git checkout a191cde163ced0035217711a8eae24e65513158c
+RUN git checkout tob-wallet
 RUN /home/indy/.cargo/bin/cargo build
 
 # Move libindy to lib path
